@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="App.ChatRoomController" prefHeight="800.0" prefWidth="1280.0">
+   <top>
+      <VBox style="-fx-background-color: #f5f5f5;">
+         <!-- Header dengan tombol kembali -->
+         <HBox alignment="CENTER_LEFT" spacing="15" style="-fx-background-color: #ffffff; -fx-padding: 15;">
+            <Button fx:id="backButton" style="-fx-background-color: #ff9933; -fx-text-fill: white; -fx-background-radius: 20; -fx-font-size: 12px; -fx-padding: 8 16;" text="← Kembali" onAction="#handleBack" />
+            <Button fx:id="clearChatButton" style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-background-radius: 20; -fx-font-size: 12px; -fx-padding: 8 16;" text="🗑️ Clear Chat" onAction="#handleClearChat" />
+            <Button fx:id="janjiTemuButton" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-background-radius: 20; -fx-font-size: 12px; -fx-padding: 8 16;" text="📅 Janji Temu" onAction="#handleJanjiTemu" />
+         </HBox>
+         
+         <!-- Header Chat Room -->
+         <VBox style="-fx-background-color: #ffffff; -fx-padding: 20;">
+            <HBox alignment="CENTER_LEFT" spacing="10">
+               <VBox>
+                  <Label fx:id="chatRoomTitle" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #ff9933;" text="💬 Chat Room" />
+                  <Label style="-fx-font-size: 14px; -fx-text-fill: #666666;" text="Ruang percakapan online" />
+               </VBox>
+            </HBox>
+         </VBox>
+         
+         <!-- Status Info -->
+         <VBox style="-fx-background-color: #ff9933; -fx-padding: 20; -fx-background-radius: 15;">
+            <VBox.margin>
+               <Insets bottom="10.0" left="20.0" right="20.0" />
+            </VBox.margin>
+            <HBox alignment="CENTER_LEFT" spacing="10">
+               <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: white;" text="📊 Status Chat" />
+            </HBox>
+            
+            <HBox spacing="30" style="-fx-padding: 10 0 0 0;">
+               <VBox spacing="5">
+                  <Label style="-fx-font-size: 12px; -fx-text-fill: #ffe6cc;" text="Status:" />
+                  <Label fx:id="statusLabel" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: white;" text="● Online" />
+               </VBox>
+               <VBox spacing="5">
+                  <Label style="-fx-font-size: 12px; -fx-text-fill: #ffe6cc;" text="Mode:" />
+                  <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: white;" text="Chat Room" />
+               </VBox>
+               <VBox spacing="5">
+                  <Label style="-fx-font-size: 12px; -fx-text-fill: #ffe6cc;" text="Auto Save:" />
+                  <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: white;" text="Aktif" />
+               </VBox>
+            </HBox>
+         </VBox>
+         
+         <!-- Header Percakapan -->
+         <HBox alignment="CENTER_LEFT" style="-fx-background-color: #ffffff; -fx-padding: 15 20;">
+            <HBox alignment="CENTER_LEFT" spacing="10">
+               <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #333333;" text="💬 Percakapan" />
+               <Label style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-padding: 4 8; -fx-background-radius: 10; -fx-font-size: 10px;" text="● Aktif" />
+            </HBox>
+         </HBox>
+      </VBox>
+   </top>
+   
+   <center>
+      <!-- Chat Area -->
+      <VBox style="-fx-background-color: #f8f9fa;">
+         <!-- Chat Messages Container -->
+         <ScrollPane fx:id="chatScrollPane" fitToWidth="true" style="-fx-background: #f8f9fa; -fx-background-color: transparent;" vbarPolicy="AS_NEEDED" hbarPolicy="NEVER">
+            <VBox fx:id="chatBox" spacing="10" style="-fx-padding: 20;">
+               <!-- Chat messages akan ditambahkan di sini secara dinamis -->
+            </VBox>
+         </ScrollPane>
+      </VBox>
+   </center>
+   
+   <bottom>
+      <!-- Input Area -->
+      <VBox style="-fx-background-color: #ffffff; -fx-padding: 20;">
+         
+         <!-- Input Message -->
+         <VBox spacing="10">
+            <Label style="-fx-font-size: 12px; -fx-text-fill: #666666; -fx-font-weight: bold;" text="💬 Kirim Pesan:" />
+            <HBox spacing="15" alignment="CENTER_LEFT">
+               <TextField fx:id="inputMessage" promptText="Ketik pesan Anda..." style="-fx-background-color: #f8f9fa; -fx-border-color: #e0e0e0; -fx-border-radius: 25; -fx-background-radius: 25; -fx-padding: 12 20; -fx-font-size: 14px;" HBox.hgrow="ALWAYS" />
+               <Button fx:id="sendButton" style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-background-radius: 25; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 12 25;" text="Kirim" onAction="#handleSendMessage" />
+            </HBox>
+         </VBox>
+         
+         <!-- Info dan Tips -->
+         <HBox spacing="15" style="-fx-padding: 15 0 0 0;">
+            <Label style="-fx-font-size: 11px; -fx-text-fill: #999999;" text="💡 Tips: Tekan Enter untuk mengirim pesan, klik kanan pada pesan untuk edit/hapus" />
+         </HBox>
+      </VBox>
+   </bottom>
+</BorderPane>

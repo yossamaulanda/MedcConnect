@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #f48c2a;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="App.ControllerRK2">
+   <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+   <top>
+      <VBox style="-fx-background-color: white; -fx-padding: 20;">
+         <HBox alignment="CENTER_LEFT" spacing="15">
+            <Button fx:id="backButton" onAction="#handleBack" prefHeight="40" prefWidth="80" style="-fx-background-color: #f48c2a; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8;" text="← Kembali" />
+         </HBox>
+         <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-padding: 10 0 0 0;">
+            <Label style="-fx-text-fill: #f48c2a; -fx-font-size: 24px; -fx-font-weight: bold;" text="💬 Konsultasi Medis" />
+            <Label style="-fx-text-fill: #e67e22; -fx-font-size: 18px;" text="dengan dr. Andi Wijaya" />
+         </HBox>
+      </VBox>
+   </top>
+   
+   <center>
+      <VBox spacing="15" style="-fx-background-color: #fff3e0; -fx-padding: 20;">
+         
+         <VBox spacing="10" style="-fx-background-color: #f48c2a; -fx-background-radius: 12; -fx-padding: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+            <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: white;" text="👨‍⚕️ Informasi Dokter" />
+            <HBox spacing="30">
+               <VBox spacing="5">
+                  <Label style="-fx-font-size: 14px; -fx-text-fill: rgba(255,255,255,0.8);" text="Nama Dokter:" />
+                  <Label style="-fx-font-size: 14px; -fx-text-fill: white; -fx-font-weight: bold;" text="dr. Andi Wijaya" />
+               </VBox>
+               <VBox spacing="5">
+                  <Label style="-fx-font-size: 14px; -fx-text-fill: rgba(255,255,255,0.8);" text="Spesialis:" />
+                  <Label style="-fx-font-size: 14px; -fx-text-fill: white; -fx-font-weight: bold;" text="Dokter Umum" />
+               </VBox>
+               <VBox spacing="5">
+                  <Label style="-fx-font-size: 14px; -fx-text-fill: rgba(255,255,255,0.8);" text="Status:" />
+                  <Label style="-fx-font-size: 14px; -fx-text-fill: white; -fx-font-weight: bold;" text="Online" />
+               </VBox>
+            </HBox>
+         </VBox>
+         
+         <!-- Area Chat -->
+         <VBox spacing="10" style="-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+            <HBox alignment="CENTER_LEFT" spacing="10">
+               <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="💬 Percakapan" />
+               <Label style="-fx-background-color: #f48c2a; -fx-text-fill: white; -fx-padding: 4 8; -fx-background-radius: 12; -fx-font-size: 12px;" text="● Aktif" />
+            </HBox>
+            
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="400" style="-fx-background: #f8f9fa; -fx-background-color: #f8f9fa; -fx-background-radius: 8;">
+               <VBox fx:id="chatMessages" spacing="10" style="-fx-padding: 15; -fx-background-color: #f8f9fa;" />
+            </ScrollPane>
+         </VBox>
+         
+         <!-- Panel Input dan Kontrol -->
+         <VBox spacing="15" style="-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+            
+            <!-- Input Pesan -->
+            <HBox alignment="CENTER_LEFT" spacing="10">
+               <TextField fx:id="messageInput" onAction="#handleSendMessage" prefHeight="45" promptText="Ketik pesan Anda..." style="-fx-background-color: #f8f9fa; -fx-border-color: #bdc3c7; -fx-border-radius: 8; -fx-padding: 10; -fx-font-size: 14px;" HBox.hgrow="ALWAYS" />
+               <Button fx:id="sendButton" onAction="#handleSendMessage" prefHeight="45" prefWidth="80" style="-fx-background-color: #f48c2a; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 8;" text="Kirim" />
+            </HBox>
+            
+            <!-- Panel Aksi Pasien -->
+            <HBox alignment="CENTER_LEFT" spacing="15">
+               <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Aksi Pasien:" />
+               <Button fx:id="endConsultationButton" onAction="#handleEndConsultation" prefHeight="35" style="-fx-background-color: #f48c2a; -fx-text-fill: white; -fx-font-size: 12px; -fx-background-radius: 6;" text="🔚 Akhiri Konsultasi" />
+               <Button fx:id="scheduleButton" onAction="#handleScheduleFollowUp" prefHeight="35" style="-fx-background-color: #f48c2a; -fx-text-fill: white; -fx-font-size: 12px; -fx-background-radius: 6;" text="📅 Meminta Jadwal Kontrol" />
+            </HBox>
+            
+         </VBox>
+         
+      </VBox>
+   </center>
+   </BorderPane>
+</AnchorPane>

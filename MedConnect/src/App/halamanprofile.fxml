@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="App.ProfileController">
+
+    <VBox alignment="TOP_CENTER" prefHeight="800.0" prefWidth="1200.0" spacing="20" style="-fx-background-color: #f48c2a;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <padding>
+            <Insets bottom="25" left="30" right="30" top="25" />
+        </padding>
+
+        <!-- Enhanced Header with Glassmorphism Effect -->
+        <HBox alignment="CENTER_LEFT" prefWidth="600" spacing="15" style="-fx-background-color: rgba(255, 255, 255, 0.25); -fx-background-radius: 20px; -fx-padding: 18px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 5); -fx-border-color: rgba(255, 255, 255, 0.3); -fx-border-radius: 20px; -fx-border-width: 1px;">
+            <Button onAction="#onBerandaClicked" style="-fx-font-size: 18px; -fx-background-color: #f48c2a; -fx-text-fill: white; -fx-background-radius: 25px; -fx-pref-width: 50px; -fx-pref-height: 50px; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 5, 0, 0, 2);" text="←" />
+            <Circle fill="#f48c2a" radius="8" />
+            <Label style="-fx-font-size: 28px; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: 'Segoe UI', Arial, sans-serif; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 2, 0, 0, 1);" text="MEDCONNECT" />
+            <Region HBox.hgrow="ALWAYS" />
+        </HBox>
+
+        <!-- Enhanced Title with Glow Effect -->
+        <Label style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: white; -fx-font-family: 'Segoe UI', Arial, sans-serif; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 3, 0, 0, 2);" text="Profile" />
+
+        <!-- Enhanced ScrollPane -->
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" style="-fx-background: transparent; -fx-background-color: transparent;" vbarPolicy="AS_NEEDED">
+            <VBox alignment="TOP_CENTER" spacing="25" style="-fx-background-color: transparent;">
+                <padding>
+                    <Insets bottom="15" left="15" right="15" top="15" />
+                </padding>
+
+                <!-- Enhanced Profile Picture Section - SMALLER CIRCLE -->
+                <VBox alignment="CENTER" spacing="15" style="-fx-background-color: rgba(255, 255, 255, 0.95); -fx-background-radius: 25px; -fx-padding: 30px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 15, 0, 0, 5); -fx-border-color: rgba(255, 255, 255, 0.5); -fx-border-radius: 25px; -fx-border-width: 2px;">
+                    <!-- Enhanced Profile Circle - REDUCED SIZE -->
+                    <VBox alignment="CENTER" spacing="0" style="-fx-background-color: #f48c2a; -fx-background-radius: 30px; -fx-pref-width: 60px; -fx-pref-height: 60px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0, 0, 3);">
+                        <Label style="-fx-font-size: 30px; -fx-text-fill: white; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 2, 0, 0, 1);" text="👤" />
+                    </VBox>
+                    <Label fx:id="lblNamaUser" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #4a5568; -fx-font-family: 'Segoe UI', Arial, sans-serif;" text="Pasien" />
+                </VBox>
+
+                <!-- Enhanced Personal Information Section -->
+                <VBox alignment="TOP_LEFT" spacing="20" style="-fx-background-color: rgba(255, 255, 255, 0.95); -fx-background-radius: 25px; -fx-padding: 30px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 15, 0, 0, 5); -fx-border-color: rgba(255, 255, 255, 0.5); -fx-border-radius: 25px; -fx-border-width: 2px;">
+                    <Label style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2d3748; -fx-font-family: 'Segoe UI', Arial, sans-serif;" text="👤 Informasi Pribadi" />
+                    <Separator style="-fx-background-color: #f48c2a; -fx-pref-height: 2px;" />
+                    
+                    <!-- Enhanced Input Fields -->
+                    <VBox spacing="8">
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #4a5568;" text="📝 Nama Lengkap" />
+                        <TextField fx:id="txtNamaLengkap" promptText="Masukkan nama lengkap" style="-fx-background-color: #f7fafc; -fx-background-radius: 15px; -fx-border-color: #e2e8f0; -fx-border-radius: 15px; -fx-pref-height: 40px; -fx-font-size: 14px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 3, 0, 0, 1);" />
+                    </VBox>
+
+                    <VBox spacing="8">
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #4a5568;" text="📧 Email" />
+                        <TextField fx:id="txtEmail" promptText="Masukkan email" style="-fx-background-color: #f7fafc; -fx-background-radius: 15px; -fx-border-color: #e2e8f0; -fx-border-radius: 15px; -fx-pref-height: 40px; -fx-font-size: 14px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 3, 0, 0, 1);" />
+                    </VBox>
+
+                    <VBox spacing="8">
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #4a5568;" text="📱 Nomor Telepon" />
+                        <TextField fx:id="txtTelepon" promptText="Masukkan nomor telepon" style="-fx-background-color: #f7fafc; -fx-background-radius: 15px; -fx-border-color: #e2e8f0; -fx-border-radius: 15px; -fx-pref-height: 40px; -fx-font-size: 14px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 3, 0, 0, 1);" />
+                    </VBox>
+
+                    <VBox spacing="8">
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #4a5568;" text="🎂 Tanggal Lahir" />
+                        <TextField fx:id="txtTanggalLahir" promptText="DD/MM/YYYY" style="-fx-background-color: #f7fafc; -fx-background-radius: 15px; -fx-border-color: #e2e8f0; -fx-border-radius: 15px; -fx-pref-height: 40px; -fx-font-size: 14px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 3, 0, 0, 1);" />
+                    </VBox>
+
+                    <VBox spacing="8">
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #4a5568;" text="🏠 Alamat" />
+                        <TextField fx:id="txtAlamat" promptText="Masukkan alamat lengkap" style="-fx-background-color: #f7fafc; -fx-background-radius: 15px; -fx-border-color: #e2e8f0; -fx-border-radius: 15px; -fx-pref-height: 40px; -fx-font-size: 14px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 3, 0, 0, 1);" />
+                    </VBox>
+                </VBox>
+
+                <!-- Enhanced Medical Information Section -->
+                <VBox alignment="TOP_LEFT" spacing="20" style="-fx-background-color: rgba(255, 255, 255, 0.95); -fx-background-radius: 25px; -fx-padding: 30px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 15, 0, 0, 5); -fx-border-color: rgba(255, 255, 255, 0.5); -fx-border-radius: 25px; -fx-border-width: 2px;">
+                    <Label style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2d3748; -fx-font-family: 'Segoe UI', Arial, sans-serif;" text="⚕️ Informasi Medis" />
+                    <Separator style="-fx-background-color: #f48c2a; -fx-pref-height: 2px;" />
+                    
+                    <VBox spacing="8">
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #4a5568;" text="🩸 Golongan Darah" />
+                        <TextField fx:id="txtGolonganDarah" promptText="Contoh: A+, B-, O+, AB-" style="-fx-background-color: #f7fafc; -fx-background-radius: 15px; -fx-border-color: #e2e8f0; -fx-border-radius: 15px; -fx-pref-height: 40px; -fx-font-size: 14px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 3, 0, 0, 1);" />
+                    </VBox>
+
+                    <VBox spacing="8">
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #4a5568;" text="📏 Tinggi Badan (cm)" />
+                        <TextField fx:id="txtTinggiBadan" promptText="Masukkan tinggi badan" style="-fx-background-color: #f7fafc; -fx-background-radius: 15px; -fx-border-color: #e2e8f0; -fx-border-radius: 15px; -fx-pref-height: 40px; -fx-font-size: 14px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 3, 0, 0, 1);" />
+                    </VBox>
+
+                    <VBox spacing="8">
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #4a5568;" text="⚖️ Berat Badan (kg)" />
+                        <TextField fx:id="txtBeratBadan" promptText="Masukkan berat badan" style="-fx-background-color: #f7fafc; -fx-background-radius: 15px; -fx-border-color: #e2e8f0; -fx-border-radius: 15px; -fx-pref-height: 40px; -fx-font-size: 14px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 3, 0, 0, 1);" />
+                    </VBox>
+
+                    <VBox spacing="8">
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #4a5568;" text="🤧 Alergi" />
+                        <TextField fx:id="txtAlergi" promptText="Masukkan informasi alergi (jika ada)" style="-fx-background-color: #f7fafc; -fx-background-radius: 15px; -fx-border-color: #e2e8f0; -fx-border-radius: 15px; -fx-pref-height: 40px; -fx-font-size: 14px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 3, 0, 0, 1);" />
+                    </VBox>
+
+                    <VBox spacing="8">
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #4a5568;" text="📋 Riwayat Penyakit" />
+                        <TextField fx:id="txtRiwayatPenyakit" promptText="Masukkan riwayat penyakit (jika ada)" style="-fx-background-color: #f7fafc; -fx-background-radius: 15px; -fx-border-color: #e2e8f0; -fx-border-radius: 15px; -fx-pref-height: 40px; -fx-font-size: 14px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 3, 0, 0, 1);" />
+                    </VBox>
+                </VBox>
+
+                <!-- Enhanced Action Buttons Section -->
+                <VBox alignment="CENTER" spacing="20" style="-fx-background-color: rgba(255, 255, 255, 0.95); -fx-background-radius: 25px; -fx-padding: 30px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 15, 0, 0, 5); -fx-border-color: rgba(255, 255, 255, 0.5); -fx-border-radius: 25px; -fx-border-width: 2px;">
+                    <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2d3748; -fx-font-family: 'Segoe UI', Arial, sans-serif;" text="🎯 Aksi" />
+                    
+                    <!-- Primary Action Buttons -->
+                    <HBox alignment="CENTER" spacing="20">
+                        <Button onAction="#onSimpanClicked" style="-fx-background-color: #f48c2a; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-background-radius: 20px; -fx-pref-width: 140px; -fx-pref-height: 45px; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 2);" text="💾 Simpan" />
+                        <Button onAction="#onResetClicked" style="-fx-background-color: #f48c2a; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-background-radius: 20px; -fx-pref-width: 140px; -fx-pref-height: 45px; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 2);" text="🔄 Reset" />
+                    </HBox>
+                    
+                    <!-- Navigation Buttons -->
+                    <HBox alignment="CENTER" spacing="20">
+                        <Button onAction="#onBerandaClicked" style="-fx-background-color: #f48c2a; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-background-radius: 20px; -fx-pref-width: 140px; -fx-pref-height: 45px; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 2);" text="🏠 Beranda" />
+                        <Button onAction="#onLogoutClicked" style="-fx-background-color: #f48c2a; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-background-radius: 20px; -fx-pref-width: 140px; -fx-pref-height: 45px; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 2);" text="🚪 Log Out" />
+                    </HBox>
+                </VBox>
+
+                <Region prefHeight="30" />
+            </VBox>
+        </ScrollPane>
+    </VBox>
+</AnchorPane>

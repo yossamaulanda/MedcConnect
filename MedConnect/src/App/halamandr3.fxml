@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #f3edff;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="App.Controllerdr3">
+
+    <!-- Header dengan Tombol Kembali dan Profile -->
+    <HBox layoutX="0.0" layoutY="0.0" prefHeight="60.0" prefWidth="1200.0" style="-fx-background-color: #f48c2a; -fx-padding: 15 30;" alignment="CENTER_LEFT">
+        <children>
+            <Button fx:id="backButton" onAction="#handleBack" style="-fx-background-color: transparent; -fx-font-size: 24px; -fx-text-fill: #ffffffff; -fx-cursor: hand;" text="←" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #333;" text="Detail Dokter" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #ffffffff;" text="Profile" />
+        </children>
+    </HBox>
+
+    <!-- Main Content Container -->
+    <HBox layoutX="40.0" layoutY="80.0" prefHeight="640.0" prefWidth="1120.0" spacing="30.0">
+        <children>
+            
+            <!-- Left Column - Doctor Profile -->
+            <VBox prefWidth="540.0" spacing="20.0">
+                <children>
+                    
+                    <!-- Doctor Profile Card -->
+                    <VBox alignment="CENTER" spacing="20.0" style="-fx-background-color: white; -fx-padding: 30; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0, 0, 2);">
+                        <children>
+                            
+                            <!-- Doctor Avatar -->
+                            <Circle fill="#7dd3fc" radius="50.0" stroke="#f48c2a" strokeWidth="2.0" />
+
+                            <!-- Doctor Name -->
+                            <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #333;" text="dr. Bambang Riyadi" />
+
+                            <!-- Rating Section -->
+                            <HBox alignment="CENTER" spacing="8.0">
+                                <children>
+                                    <Label style="-fx-font-size: 20px;" text="⭐" />
+                                    <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #f48c2a;" text="5.0" />
+                                    <Label style="-fx-font-size: 14px; -fx-text-fill: #888;" text="(156 ulasan)" />
+                                </children>
+                            </HBox>
+
+                            <!-- Doctor Details Grid -->
+                            <HBox alignment="CENTER" spacing="30.0" style="-fx-padding: 15 0 0 0;">
+                                <children>
+                                    <VBox alignment="CENTER" spacing="8.0">
+                                        <children>
+                                            <Label style="-fx-font-size: 20px;" text="📋" />
+                                            <Label style="-fx-font-size: 12px; -fx-text-fill: #666; -fx-font-weight: bold;" text="Spesialisasi" />
+                                            <Label style="-fx-font-size: 14px; -fx-text-fill: #333;" text="Dokter Umum" />
+                                        </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" spacing="8.0">
+                                        <children>
+                                            <Label style="-fx-font-size: 20px;" text="⏰" />
+                                            <Label style="-fx-font-size: 12px; -fx-text-fill: #666; -fx-font-weight: bold;" text="Pengalaman" />
+                                            <Label style="-fx-font-size: 14px; -fx-text-fill: #333;" text="17 Tahun" />
+                                        </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" spacing="8.0">
+                                        <children>
+                                            <Label style="-fx-font-size: 20px;" text="📍" />
+                                            <Label style="-fx-font-size: 12px; -fx-text-fill: #666; -fx-font-weight: bold;" text="Rumah Sakit" />
+                                            <Label style="-fx-font-size: 14px; -fx-text-fill: #333;" text="RS Nusantara Medika" />
+                                        </children>
+                                    </VBox>
+                                </children>
+                            </HBox>
+
+                            <!-- Chat Button -->
+                            <Button fx:id="chatButton" onAction="#handleChat" prefWidth="200.0" prefHeight="50.0" style="-fx-background-color: #f48c2a; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 25px; -fx-font-size: 16px; -fx-cursor: hand;" text="Chat Sekarang" />
+                        </children>
+                    </VBox>
+
+                </children>
+            </VBox>
+
+            <!-- Right Column - Information -->
+            <VBox prefWidth="550.0" spacing="20.0">
+                <children>
+                    
+                    <!-- Profile Information Section -->
+                    <VBox spacing="15.0" style="-fx-background-color: white; -fx-padding: 25; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(252, 250, 250, 0.1), 8, 0, 0, 1);">
+                        <children>
+                            <HBox alignment="CENTER_LEFT" spacing="12.0">
+                                <children>
+                                    <Label style="-fx-font-size: 24px; -fx-text-fill: #f48c2a;" text="🧍" />
+                                    <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #333;" text="Profil Dokter" />
+                                </children>
+                            </HBox>
+                            <Label style="-fx-font-size: 14px; -fx-text-fill: #666; -fx-padding: 0 0 0 36; -fx-wrap-text: true;" text="Pelayanan medis harian, diagnosis komprehensif, dan rujukan spesialis. Dengan pengalaman 17 tahun, dr. Bambang Riyadi memberikan layanan kesehatan yang terpercaya dan profesional." />
+                        </children>
+                    </VBox>
+
+                    <!-- Services Section -->
+                    <VBox spacing="15.0" style="-fx-background-color: white; -fx-padding: 25; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0, 0, 1);">
+                        <children>
+                            <HBox alignment="CENTER_LEFT" spacing="12.0">
+                                <children>
+                                    <Label style="-fx-font-size: 24px; -fx-text-fill: #f48c2a;" text="🩺" />
+                                    <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #333;" text="Layanan" />
+                                </children>
+                            </HBox>
+                            <VBox spacing="8.0" style="-fx-padding: 0 0 0 36;">
+                                <children>
+                                    <Label style="-fx-font-size: 14px; -fx-text-fill: #666;" text="• Konsultasi kesehatan umum" />
+                                    <Label style="-fx-font-size: 14px; -fx-text-fill: #666;" text="• Pemeriksaan rutin" />
+                                    <Label style="-fx-font-size: 14px; -fx-text-fill: #666;" text="• Diagnosis penyakit umum" />
+                                    <Label style="-fx-font-size: 14px; -fx-text-fill: #666;" text="• Resep obat" />
+                                    <Label style="-fx-font-size: 14px; -fx-text-fill: #666;" text="• Surat keterangan sehat" />
+                                    <Label style="-fx-font-size: 14px; -fx-text-fill: #666;" text="• Rujukan spesialis" />
+                                    <Label style="-fx-font-size: 14px; -fx-text-fill: #666;" text="• Medical check-up" />
+                                </children>
+                            </VBox>
+                        </children>
+                    </VBox>
+
+                    <!-- Schedule Section -->
+                    <VBox spacing="15.0" style="-fx-background-color: white; -fx-padding: 25; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0, 0, 1);">
+                        <children>
+                            <HBox alignment="CENTER_LEFT" spacing="12.0">
+                                <children>
+                                    <Label style="-fx-font-size: 24px; -fx-text-fill: #f48c2a;" text="📅" />
+                                    <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #333;" text="Jadwal Praktik" />
+                                </children>
+                            </HBox>
+                            <VBox spacing="8.0" style="-fx-padding: 0 0 0 36;">
+                                <children>
+                                    <HBox spacing="20.0">
+                                        <children>
+                                            <Label style="-fx-font-size: 14px; -fx-text-fill: #666; -fx-font-weight: bold;" text="Senin - Jumat" />
+                                            <Label style="-fx-font-size: 14px; -fx-text-fill: #666;" text="07:00 - 15:00" />
+                                        </children>
+                                    </HBox>
+                                    <HBox spacing="20.0">
+                                        <children>
+                                            <Label style="-fx-font-size: 14px; -fx-text-fill: #666; -fx-font-weight: bold;" text="Sabtu" />
+                                            <Label style="-fx-font-size: 14px; -fx-text-fill: #666;" text="07:00 - 13:00" />
+                                        </children>
+                                    </HBox>
+                                    <HBox spacing="20.0">
+                                        <children>
+                                            <Label style="-fx-font-size: 14px; -fx-text-fill: #666; -fx-font-weight: bold;" text="Minggu" />
+                                            <Label style="-fx-font-size: 14px; -fx-text-fill: #f48c2a;" text="Tutup" />
+                                        </children>
+                                    </HBox>
+                                </children>
+                            </VBox>
+                        </children>
+                    </VBox>
+
+                </children>
+            </VBox>
+
+        </children>
+    </HBox>
+
+    <!-- Bottom Navigation -->
+    <HBox layoutX="0.0" layoutY="740.0" prefHeight="60.0" prefWidth="1200.0" style="-fx-background-color: white; -fx-padding: 10 40; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0, 0, -2);" alignment="CENTER" spacing="60.0">
+        <children>
+            <Button onAction="#onMenuClicked" prefWidth="180.0" prefHeight="40.0" style="-fx-background-color: #f48c2a; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 20px; -fx-font-size: 14px; -fx-cursor: hand;" text="🏠 Beranda" />
+        </children>
+    </HBox>
+
+</AnchorPane>

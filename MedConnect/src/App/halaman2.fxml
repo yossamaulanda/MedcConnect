@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="App.controller2"
+            prefWidth="1200.0" prefHeight="800.0"
+            style="-fx-background-color: #f3edff;">
+
+    <!-- Header with Back Button -->
+    <HBox spacing="10" alignment="CENTER_LEFT"
+          AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10">
+        <Button fx:id="backButton" text="←" onAction="#handleBack"
+                style="-fx-background-color: linear-gradient(to right, #f48c2a, #ff9f3a); -fx-font-size: 14px; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 20; -fx-padding: 8 16 8 16; -fx-effect: dropshadow(gaussian, rgba(244,140,42,0.3), 6, 0.3, 0, 2);"/>
+        <Label text="Dokter"
+                style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #333;" />
+    </HBox>
+
+    <VBox spacing="15" alignment="TOP_CENTER"
+          AnchorPane.topAnchor="60" AnchorPane.leftAnchor="20"
+          AnchorPane.rightAnchor="20" AnchorPane.bottomAnchor="80">
+
+        <!-- Search Bar -->
+        <TextField fx:id="searchField" promptText="Masukkan kata kunci"
+                   style="-fx-font-size: 14px; -fx-pref-height: 40px; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #f48c2a; -fx-border-width: 2;" />
+
+        <!-- Filter Buttons -->
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Button text="☰" onAction="#handleFilter"
+                    style="-fx-background-color: #f48c2a; -fx-text-fill: white; -fx-background-radius: 15; -fx-pref-width: 40; -fx-pref-height: 30;" />
+            <Button text="Tanggal ↕" onAction="#handleSortTanggal"
+                    style="-fx-background-color: transparent; -fx-text-fill: #f48c2a; -fx-border-color: #f48c2a; -fx-border-radius: 15; -fx-background-radius: 15;" />
+            <Button text="Pengalaman ↕" onAction="#handleSortPengalaman"
+                    style="-fx-background-color: transparent; -fx-text-fill: #f48c2a; -fx-border-color: #f48c2a; -fx-border-radius: 15; -fx-background-radius: 15;" />
+        </HBox>
+
+        <!-- Doctor List Container -->
+        <ScrollPane fitToWidth="true" style="-fx-background-color: transparent;">
+            <VBox fx:id="dokterListContainer" spacing="15" style="-fx-background-color: transparent;">
+                <!-- Isi dokter dimasukkan dari controller -->
+            </VBox>
+        </ScrollPane>
+
+    </VBox>
+
+    <!-- Bottom Navigation -->
+    <HBox spacing="20" alignment="CENTER"
+          AnchorPane.bottomAnchor="10" AnchorPane.leftAnchor="50" AnchorPane.rightAnchor="50">
+        <Button text="Beranda" onAction="#onMenuClicked"
+                style="-fx-background-color: #f48c2a; -fx-text-fill: white; -fx-font-size: 14px; -fx-pref-width: 150; -fx-pref-height: 40; -fx-background-radius: 20;" />
+        <Button text="Profile" onAction="#onMenuClicked"
+                style="-fx-background-color: #f48c2a; -fx-text-fill: white; -fx-font-size: 14px; -fx-pref-width: 150; -fx-pref-height: 40; -fx-background-radius: 20;" />
+    </HBox>
+
+</AnchorPane>
