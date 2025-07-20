@@ -1,0 +1,17 @@
+<list>
+  <pengingat>
+    <nama>Jati</nama>
+    <namaDokter>Jati</namaDokter>
+    <saranDokter>Jangan begadang, obat harus di minum setelah makan</saranDokter>
+  </pengingat>
+  <pengingat>
+    <nama>damara</nama>
+    <namaDokter>damara</namaDokter>
+    <saranDokter>minum obat</saranDokter>
+  </pengingat>
+  <pengingat>
+    <nama>yossa</nama>
+    <namaDokter>yossa</namaDokter>
+    <saranDokter>mandi</saranDokter>
+  </pengingat>
+</list>
